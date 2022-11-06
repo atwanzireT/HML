@@ -7,7 +7,6 @@
         <title>hotel_margherita</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="colorlib" content="dark">
         <link rel="manifest" href="site.webmanifest">
 		<link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/favicon.ico' %}">
 
@@ -23,12 +22,17 @@
             <link rel="stylesheet" href="{% static 'assets/css/slick.css' %}">
             <link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}">
             <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
-            <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+            <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
    </head>
 
    <body>
        {% include 'components/preloader.html' %}
        {% include 'components/header.html' %}
+       <main>
+        {% block content %}
+            
+        {% endblock content %}
+       </main>
 	<!-- JS here -->
 	
 		<!-- All JS Custom Plugins Link Here here -->

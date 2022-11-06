@@ -80,7 +80,7 @@
     color: #fff;
     font-weight: bold; }
   .slicknav_menu .slicknav_icon-bar {
-      background-color: #dca73a !important;
+      background-color: #5cb85c !important;
     }
 
     .slicknav_btn {
@@ -206,7 +206,7 @@
 	border-bottom: 1px solid #eee;
 }
 .slicknav_nav a:hover {
-    background: #F79960 none repeat scroll 0 0;
+    background: #5cb85c none repeat scroll 0 0;
     border-radius: 0;
     color: #ffffff;
 }
@@ -225,7 +225,7 @@
 .slicknav_nav .slicknav_row:hover,
 .slicknav_nav .slicknav_row:hover .slicknav_arrow {
     border-radius: 0;
-    background-color: #F79960;
+    background-color: #5cb85c;
     background-color: transparent;
     color: #000;
 }
@@ -258,5 +258,5 @@
 }
 .slicknav_menu .slicknav_nav a:hover {
 	background: transparent;
-	color: #dca73a;
+	color: #5cb85c;
 }
