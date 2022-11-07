@@ -36,3 +36,20 @@ class Update(models.Model):
 
     def __str__(self) -> str:
         return self.title
+
+class Room_Image(models.Model):
+    title = models.CharField(max_length = 50)
+    room = models.ForeignKey(Room, on_delete = models.CASCADE)
+    image = models.ImageField(blank = True, null = True)
+
+    def __str__(self):
+        return self.title
+
+class Service_Image(models.Model):
+    title = models.CharField(max_length = 50)
+    room = models.ForeignKey(Service, on_delete = models.CASCADE)
+    image = models.ImageField(blank = True, null = True)
+
+    def __str__(self):
+        return self.title
+
