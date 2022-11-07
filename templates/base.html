@@ -28,11 +28,12 @@
    <body>
        {% include 'components/preloader.html' %}
        {% include 'components/header.html' %}
-       <main>
+       <main class="container-fluid">
         {% block content %}
             
         {% endblock content %}
        </main>
+       {% include 'components/footer.html' %}
 	<!-- JS here -->
 	
 		<!-- All JS Custom Plugins Link Here here -->

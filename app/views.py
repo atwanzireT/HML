@@ -10,4 +10,7 @@ def index(request):
         'services': services,
         'rooms': rooms,
     }
-    return render(request, 'index.html')
+    return render(request, 'index.html', dic)
+
+def contact(request):
+    return render(request, 'contact.html')

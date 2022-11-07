@@ -18,13 +18,13 @@ class Room(models.Model):
     price = models.FloatField()
 
     def __str__(self):
-        return self.description
+        return self.title
 
 class Booking(models.Model):
     booking_id = models.UUIDField(default = uuid.uuid4, unique = True)
     booking_in = models.DateField()
     booking_out = models.DateField()
-    room_booked = models.ForeignKey(Room, on_deleted = models.CASCADE)
+    room_booked = models.ForeignKey(Room, on_delete = models.CASCADE)
 
     def __str__(self):
         return self.booking_id
