@@ -1,0 +1,60 @@
+<!-- slider Area Start-->
+{% load static %}
+<div class="slider-area">
+    <div class="single-slider hero-overly slider-height2 d-flex align-items-center"
+        data-background="{% static 'assets/img/hero/contact_hero.jpg' %}">
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-11 offset-xl-1 offset-lg-1 offset-md-1">
+                    <div class="hero-caption">
+                        <span>Blog</span>
+                        <h2>{{blog_obj.category}}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- slider Area End-->
+
+<!--================Blog Area =================-->
+<section class="blog_area single-post-area section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 posts-list">
+                <div class="single-post">
+                    <div class="feature-img">
+                        <img class="img-fluid" src="{{blog_obj.image.url}}" alt="">
+                    </div>
+                    <div class="blog_details">
+                        <h2>{{blog_obj.title}}
+                        </h2>
+                        <ul class="blog-info-link mt-3 mb-4">
+                            <li><a href="#"><i class="fa fa-user"></i> {{blog_obj.category}}</a></li>
+                            <!-- <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li> -->
+                        </ul>
+                        <p class="excert">
+                            {{blog_obj.description | safe}}
+                        </p>
+                        <div class="quote-wrapper">
+                            <div class="quotes">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="navigation-top">
+                    <div class="d-sm-flex justify-content-between text-center">
+                        <div class="col-sm-4 text-center my-2 my-sm-0">
+                            <!-- <p class="comment-count"><span class="align-middle"><i class="fa fa-comment"></i></span> 06 Comments</p> -->
+                        </div>
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================ Blog Area end =================-->

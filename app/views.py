@@ -35,3 +35,10 @@ def blog(request):
         'category' : category,
     }
     return render(request, 'blog.html', dic)
+
+def blog_detail(request, id):
+    blog_obj = Update.objects.get(id = id)
+    dic  = {
+        'blog_obj':blog_obj,
+    }
+    return render(request, 'blog_details.html', dic)
