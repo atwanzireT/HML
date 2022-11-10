@@ -15,6 +15,14 @@ def index(request):
 def contact(request):
     return render(request, 'contact.html')
 
+def service(request):
+    service = Service.objects.all
+
+    dic = {
+        'service': service,
+    }
+    return render(request, 'services.html', dic)
+
 def rooms(request):
     rooms = Room.objects.all()
     room_image = Room_Image.objects.all()
@@ -42,3 +50,20 @@ def blog_detail(request, id):
         'blog_obj':blog_obj,
     }
     return render(request, 'blog_details.html', dic)
+
+def room_detail(request, id):
+    room_obj = Room.objects.get(id = id)
+    room_img = Room_Image.objects.filter(room = id)
+    dic  = {
+        'room_obj':room_obj,
+        'room_img':room_img,
+    }
+    return render(request, 'room_details.html', dic)
+
+
+def service_detail(request, id):
+    service_obj = Service.objects.get(id = id)
+    dic = {
+        'service_obj':service_obj,
+    }
+    return render(request, 'service.html', dic)

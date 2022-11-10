@@ -1,0 +1,62 @@
+<!-- slider Area Start-->
+{% load static %}
+<!--================Blog Area =================-->
+<section class="blog_area single-post-area section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 posts-list">
+                <div class="single-post">
+                    <div class="feature-img">
+                        <img class="img-fluid" src="{{room_obj.image.url}}" alt="">
+                    </div>
+                    <div class="blog_details">
+                        <h2>{{room_obj.title}}
+                        </h2>
+                        <ul class="blog-info-link mt-3 mb-4">
+                            <li><a href="#"><i class="fa fa-home"></i> {{room_obj.price}}</a></li>
+                            <!-- <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li> -->
+                        </ul>
+                        <p class="excert">
+                            {{room_obj.description | safe}}
+                        </p>
+                        <div class="quote-wrapper">
+                            <div class="quotes">
+                                Your Confort is Our Responsibility ...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="navigation-top">
+                    <div class="d-sm-flex justify-content-between text-center">
+                        <div class="col-sm-4 text-center my-2 my-sm-0">
+                            <!-- <p class="comment-count"><span class="align-middle"><i class="fa fa-comment"></i></span> 06 Comments</p> -->
+                        </div>
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================ Blog Area end =================-->
+
+<!-- Gallery img Start-->
+<div class="gallery-area fix">
+    <div class="container-fluid p-0">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="gallery-active owl-carousel">
+                    {% for rs in room_img %}
+                    <div class="gallery-img">
+                        <a href="#"><img style="height: 250px;" src="{{rs.image.url}}" alt="{{rs.title}}"></a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Gallery img End-->
