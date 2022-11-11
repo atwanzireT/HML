@@ -1,0 +1,33 @@
+<!-- Make customer Start-->
+{% load static %}
+
+<div class="mt-5">
+    {% for rs in service %}
+    <section class="make-customer-area fix">
+        <div class="container-fluid p-0">
+            <div class="row">
+                <div class="col-xl-5 col-lg-6">
+                    <div class="customer-img mb-120">
+                        <img src="{{rs.image.url}}" class="customar-img1" alt="">
+                        <img src="{% static 'assets/img/customer/hml2.png' %}" class="customar-img2" alt="">
+                        <div class="service-experience heartbeat">
+                            <h3>Our Years of Service<br>Experience</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class=" col-xl-4 col-lg-4">
+                    <div class="customer-caption">
+                        <span>Best of Uganda</span>
+                        <h2>{{rs.title}}</h2>
+                        <div class="caption-details">
+                            <p>{{rs.description |truncatechars_html:150|safe }}</p>
+                            <a href="#" class="btn more-btn1">Learn More <i class="ti-angle-right"></i> </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Make customer End-->
+    {% endfor %}
+</div>

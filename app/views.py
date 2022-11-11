@@ -13,6 +13,8 @@ def index(request):
     return render(request, 'index.html', dic)
 
 def contact(request):
+    name = request.GET.get('name')
+    print(name)
     return render(request, 'contact.html')
 
 def service(request):
