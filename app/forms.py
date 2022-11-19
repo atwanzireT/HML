@@ -6,8 +6,8 @@ class ContactForm(ModelForm):
         model = ContactMessage
         fields = ['name', 'email', 'subject','message']
         widgets = {
-            'name'   : TextInput(attrs={'class': 'input','placeholder':'Name & Surname'}),
-            'subject' : TextInput(attrs={'class': 'input','placeholder':'Subject'}),
-            'email'   : TextInput(attrs={'class': 'input','placeholder':'Email Address'}),
-            'message' : Textarea(attrs={'class': 'input','placeholder':'Your Message','rows':'5'}),
+            'name'   : TextInput(attrs={'class': 'form-control','placeholder':'Name '}),
+            'subject' : TextInput(attrs={'class': 'form-control','placeholder':'Subject'}),
+            'email'   : TextInput(attrs={'class': 'form-control','placeholder':'Email Address'}),
+            'message' : Textarea(attrs={'class': 'form-control w-100','placeholder':'Your Message','rows':'5'}),
         }

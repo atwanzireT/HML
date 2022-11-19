@@ -1,16 +1,16 @@
 <!-- Make customer Start-->
 {% load static %}
 
-<div class="mt-5">
+<div>
     {% for rs in service %}
-    <section class="make-customer-area fix">
+    <section class="make-customer-area fix p-5">
         <div class="container-fluid p-0">
             <div class="row">
                 <div class="col-xl-5 col-lg-6">
-                    <div class="customer-img mb-120">
+                    <div class="customer-img mb-40">
                         <img src="{{rs.image.url}}" class="customar-img1" alt="">
                         <img src="{% static 'assets/img/customer/hml2.png' %}" class="customar-img2" alt="">
-                        <div class="service-experience heartbeat">
+                        <div class="service-experience heartbeat bg-success">
                             <h3>Our Years of Service<br>Experience</h3>
                         </div>
                     </div>

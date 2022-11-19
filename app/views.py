@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from .models import *
+from .forms import *
+from django.http import HttpResponseRedirect
 
 # Create your views here.
 def index(request):
@@ -13,9 +15,22 @@ def index(request):
     return render(request, 'index.html', dic)
 
 def contact(request):
-    name = request.GET.get('name')
-    print(name)
-    return render(request, 'contact.html')
+    form = ContactForm(request.POST)
+    if request.method == 'POST': # check post
+        if form.is_valid():
+            data = ContactMessage() #create relation with model
+            data.name = form.cleaned_data['name'] # get form input data
+            data.email = form.cleaned_data['email']
+            data.subject = form.cleaned_data['subject']
+            data.message = form.cleaned_data['message']
+            data.ip = request.META.get('REMOTE_ADDR')
+            data.save()  #save data to table
+            return HttpResponseRedirect('/contact/')
+    form = ContactForm
+    dic = {
+        'form':form,
+    }
+    return render(request, 'contact.html', dic)
 
 def service(request):
     service = Service.objects.all
@@ -39,10 +54,12 @@ def blog(request):
     blog = Update.objects.all()
     category = Update_Category.objects.all().order_by('?')[:6]
     blog_slice = Update.objects.all()[:4]
+    blog_rand = Update.objects.all().order_by('?')[:3]
     dic = {
         'blog':blog,
         'blog_slice':blog_slice,
         'category' : category,
+        'blog_rand':blog_rand,
     }
     return render(request, 'blog.html', dic)
 

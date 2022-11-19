@@ -3451,7 +3451,7 @@ label {
   color: #112e41 !important;
   font-size: 20px;
   padding-right: 69px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   font-family: 'Lato', sans-serif;
   font-weight: 500;
 }
@@ -3501,9 +3501,9 @@ label {
 /* line 69, C:/Users/SPN Graphics/Desktop/hotel_up/Hotel_HTML/assets/scss/_customer.scss */
 .customer-caption .caption-details p {
   color: #888888;
-  line-height: 28px;
+  line-height: 10px;
   font-size: 15px;
-  margin-bottom: 52px;
+  margin-bottom: 8px;
   padding-right: 26px;
 }
 
