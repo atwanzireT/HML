@@ -20,14 +20,7 @@ class Room(models.Model):
     def __str__(self):
         return self.title
 
-class Booking(models.Model):
-    booking_id = models.UUIDField(default = uuid.uuid4, unique = True)
-    booking_in = models.DateField()
-    booking_out = models.DateField()
-    room_booked = models.ForeignKey(Room, on_delete = models.CASCADE)
 
-    def __str__(self):
-        return self.booking_id
 class Update_Category(models.Model):
     title = models.CharField(max_length = 50, unique = True)
     description = RichTextField(blank = True, null = True)

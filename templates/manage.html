@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 
 <head>
   <!-- Required meta tags -->
@@ -21,15 +22,20 @@
   <!-- endinject -->
   <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" />
 </head>
+
 <body>
   <div class="container-scroller">
-    
-    {% block content %}
-        
-    {% endblock content %}
-        
+    {% include 'features/header.html' %}
+    <div class="container-fluid page-body-wrapper">
+      {% include 'features/setting_panel.html' %}
+      {% include 'features/sidebar.html' %}
+      {% block content %}
+
+      {% endblock content %}
+    </div>
   </div>
   <!-- container-scroller -->
+  {% include 'features/footer.html' %}
 
   <!-- plugins:js -->
   <script src="{% static 'vendors/js/vendor.bundle.base.js' %}"></script>
@@ -55,4 +61,3 @@
 </body>
 
 </html>
-

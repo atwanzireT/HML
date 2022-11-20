@@ -18,7 +18,6 @@ class ServiceAdmin(admin.ModelAdmin):
 
 admin.site.register(Room, RoomAdmin)
 admin.site.register(Service, ServiceAdmin)
-admin.site.register(Booking)
 admin.site.register(Update)
 admin.site.register(Update_Category)
 admin.site.register(Room_Image)
