@@ -29,8 +29,25 @@
                         <div class="blog_item_img">
                             <img class="card-img rounded-0" src="{{rs.image.url}}" alt="">
                             <a href="#" class="blog_item_date">
-                                <h3>15</h3>
-                                <p>Jan</p>
+                                <h3>{{rs.created.day}}</h3>
+                                <p>
+                                    {% if rs.created %}
+                                    {% if rs.created.month == 1 %}Jan{% endif %}
+                                    {% if rs.created.month == 2 %}Feb{% endif %}
+                                    {% if rs.created.month == 3 %}Mar{% endif %}
+                                    {% if rs.created.month == 4 %}Apr{% endif %}
+                                    {% if rs.created.month == 5 %}May{% endif %}
+                                    {% if rs.created.month == 6 %}Jun{% endif %}
+                                    {% if rs.created.month == 7 %}Jul{% endif %}
+                                    {% if rs.created.month == 8 %}Aug{% endif %}
+                                    {% if rs.created.month == 9 %}Sep{% endif %}
+                                    {% if rs.created.month == 10 %}Oct{% endif %}
+                                    {% if rs.created.month == 11 %}Nov{% endif %}
+                                    {% if rs.created.month == 12 %}Dec{% endif %}
+                                    {% endif %}
+                                </p>
+                                <p>{{rs.created.year}}</p>
+
                             </a>
                         </div>
                         <div class="blog_details">
@@ -52,8 +69,24 @@
                         <div class="blog_item_img">
                             <img class="card-img rounded-0" src="{{rs.image.url}}" alt="">
                             <a href="/blog/{{rs.id}}" class="blog_item_date">
-                                <h3>15</h3>
-                                <p>Jan</p>
+                                <h3>{{rs.created.day}}</h3>
+                                <p>
+                                    {% if rs.created %}
+                                    {% if rs.created.month == 1 %}Jan{% endif %}
+                                    {% if rs.created.month == 2 %}Feb{% endif %}
+                                    {% if rs.created.month == 3 %}Mar{% endif %}
+                                    {% if rs.created.month == 4 %}Apr{% endif %}
+                                    {% if rs.created.month == 5 %}May{% endif %}
+                                    {% if rs.created.month == 6 %}Jun{% endif %}
+                                    {% if rs.created.month == 7 %}Jul{% endif %}
+                                    {% if rs.created.month == 8 %}Aug{% endif %}
+                                    {% if rs.created.month == 9 %}Sep{% endif %}
+                                    {% if rs.created.month == 10 %}Oct{% endif %}
+                                    {% if rs.created.month == 11 %}Nov{% endif %}
+                                    {% if rs.created.month == 12 %}Dec{% endif %}
+                                    {% endif %}
+                                </p>
+                                <p>{{rs.created.year}}</p>
                             </a>
                         </div>
 

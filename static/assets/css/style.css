@@ -2021,14 +2021,13 @@ label {
     transition: .6s;
   }
 }
-/* line 601, C:/Users/SPN Graphics/Desktop/hotel_up/Hotel_HTML/assets/scss/_common.scss */
+
 .customar-padding {
   padding-top: 260px;
   padding-bottom: 93px;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
-  /* line 601, C:/Users/SPN Graphics/Desktop/hotel_up/Hotel_HTML/assets/scss/_common.scss */
   .customar-padding {
     padding-top: 160px;
     padding-bottom: 93px;
@@ -2036,7 +2035,6 @@ label {
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
-  /* line 601, C:/Users/SPN Graphics/Desktop/hotel_up/Hotel_HTML/assets/scss/_common.scss */
   .customar-padding {
     padding-top: 160px;
     padding-bottom: 80px;
@@ -2044,7 +2042,6 @@ label {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  /* line 601, C:/Users/SPN Graphics/Desktop/hotel_up/Hotel_HTML/assets/scss/_common.scss */
   .customar-padding {
     padding-left: 20px;
     padding-right: 20px;
@@ -2054,7 +2051,6 @@ label {
 }
 
 @media (max-width: 767px) {
-  /* line 601, C:/Users/SPN Graphics/Desktop/hotel_up/Hotel_HTML/assets/scss/_common.scss */
   .customar-padding {
     padding-top: 80px;
     padding-bottom: 80px;
@@ -2062,7 +2058,6 @@ label {
     padding-right: 20px;
   }
 }
-
 
 .dining-padding-top {
   padding-top: 200px;
@@ -2888,7 +2883,7 @@ label {
   color: #5cb85c;
   font-size: 14px;
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 13px;
 }
 
 .customer-caption h2 {
@@ -2896,7 +2891,7 @@ label {
   font-size: 37px;
   line-height: 1.2;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 32px;
   font-family: 'Noto Serif', serif;
 }
 
@@ -2922,7 +2917,7 @@ label {
   color: #112e41 !important;
   font-size: 20px;
   padding-right: 69px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   font-family: 'Lato', sans-serif;
   font-weight: 500;
 }
@@ -2967,7 +2962,7 @@ label {
   color: #888888;
   line-height: 28px;
   font-size: 15px;
-  margin-bottom: 10px;
+  margin-bottom: 52px;
   padding-right: 26px;
 }
 

@@ -9,6 +9,8 @@ class Customer(models.Model):
     address = models.CharField(max_length=150)
     email = models.EmailField()
     status = models.CharField(max_length=50)
+    slug = models.SlugField()
+
 
     def __str__(self):
         return f"{self.first_name} {self.last_names}"
@@ -18,6 +20,7 @@ class Booking(models.Model):
     booking_in = models.DateField()
     booking_out = models.DateField()
     room_booked = models.ForeignKey(Room, on_delete = models.CASCADE)
+    slug = models.SlugField()
 
     def __str__(self):
         return self.booking_id

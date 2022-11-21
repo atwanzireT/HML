@@ -37,7 +37,7 @@
                 <!-- Single Room -->
                 <div class="single-room mb-50">
                     <div class="room-img">
-                        <a href="#"><img src="{{rs.image.url}}" alt=""></a>
+                       <a href="rooms.html"><img src="{{rs.image.url}}" alt=""></a>
                     </div>
                     <div class="room-caption">
                         <h3><a href="rooms.html">{{rs.title}}</a></h3>
@@ -68,7 +68,7 @@
                 <div class="gallery-active owl-carousel">
                     {% for rs in room_image %}
                     <div class="gallery-img">
-                        <a href="#"><img src="{{rs.image.url}}" style="height: 250px;" alt="{{rs.title}}"></a>
+                        <a href="#"><img src="{{rs.image.url}}" alt="{{rs.title}}"></a>
                     </div>
                     {% endfor %}
                 </div>

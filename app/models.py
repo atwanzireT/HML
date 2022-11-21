@@ -16,6 +16,8 @@ class Room(models.Model):
     image = models.ImageField(upload_to = 'rooms')
     description = RichTextField(blank = True)
     price = models.FloatField()
+    slug = models.SlugField(blank=True, null=True)
+
 
     def __str__(self):
         return self.title
@@ -24,6 +26,8 @@ class Room(models.Model):
 class Update_Category(models.Model):
     title = models.CharField(max_length = 50, unique = True)
     description = RichTextField(blank = True, null = True)
+    slug = models.SlugField(blank=True, null=True)
+
 
     def __str__(self) -> str:
         return self.title
@@ -35,6 +39,7 @@ class Update(models.Model):
     description = RichTextField(blank = True)
     created = models.DateField(auto_now_add = True)
     updated = models.DateField(auto_now = True)
+    slug = models.SlugField(blank=True, null=True)
 
     def __str__(self) -> str:
         return self.title
@@ -70,6 +75,8 @@ class ContactMessage(models.Model):
     note = models.CharField(blank=True, max_length=100)
     create_at=models.DateTimeField(auto_now_add=True)
     update_at=models.DateTimeField(auto_now=True)
+    slug = models.SlugField(blank=True, null=True)
+
 
     def __str__(self):
         return self.name

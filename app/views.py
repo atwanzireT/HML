@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import *
 from .forms import *
 from django.http import HttpResponseRedirect
+from django.core.paginator import Paginator
 
 # Create your views here.
 def index(request):
@@ -33,7 +34,10 @@ def contact(request):
     return render(request, 'contact.html', dic)
 
 def service(request):
-    service = Service.objects.all
+    service = Service.objects.all()
+    paginator = Paginator(service, 9)
+    page = request.GET.get('page')
+    service = paginator.get_page(page)
 
     dic = {
         'service': service,
@@ -43,6 +47,9 @@ def service(request):
 def rooms(request):
     rooms = Room.objects.all()
     room_image = Room_Image.objects.all()
+    paginator = Paginator(rooms, 9)
+    page = request.GET.get('page')
+    rooms = paginator.get_page(page)
 
     dic = {
         'rooms': rooms,
