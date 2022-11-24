@@ -5,7 +5,7 @@ from app.models import *
 # Create your models here.
 class Customer(models.Model):
     first_name = models.CharField(max_length=50)
-    last_names = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
     address = models.CharField(max_length=150)
     email = models.EmailField()
     status = models.CharField(max_length=50)

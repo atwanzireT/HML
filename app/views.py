@@ -3,13 +3,21 @@ from .models import *
 from .forms import *
 from django.http import HttpResponseRedirect
 from django.core.paginator import Paginator
+from management.forms import *
 
 # Create your views here.
 def index(request):
+    form = BookingForm(request.POST)
+    if request.method == 'POST': # check post
+        if form.is_valid():
+            form.save()  #save data to table
+            return HttpResponseRedirect('/')
+    form = BookingForm
     services = Service.objects.all()[:3]
     rooms = Room.objects.all()[:3]
 
     dic = {
+        'form':form,
         'services': services,
         'rooms': rooms,
     }
