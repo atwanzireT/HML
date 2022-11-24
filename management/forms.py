@@ -1,4 +1,4 @@
-from django.forms import ModelForm
+from django.forms import ModelForm, TextInput
 from .models import *
 
 class CustomerForm(ModelForm):
@@ -10,5 +10,11 @@ class CustomerForm(ModelForm):
 class BookingForm(ModelForm):
     class Meta:
         model = Booking
-        fields = ['booking_id', 'booking_in', 'booking_out', 'room_booked']
+        fields = ['Check_InDate', 'Check_OutDate', 'No_of_Guests', 'room_booked']
+        widgets = {
+            'Check_InDate': TextInput(attrs={'class': 'form-control', 'id':'datepicker1',  'placeholder':'10/12/2020'}),
+            'Check_OutDate': TextInput(attrs={'class': 'form-control', 'id':'datepicker1',  'placeholder':'10/12/2020'}),
+            'No_of_Guests': TextInput(attrs={'class': 'form-control', 'id':'datepicker1'}),
+            'room_booked': TextInput(attrs={'class': 'form-control'}),
+        }
         
