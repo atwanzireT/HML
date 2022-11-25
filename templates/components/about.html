@@ -1,29 +1,53 @@
-    <!-- Make customer Start-->
-    {% load static %}
-    <section class="make-customer-area customar-padding fix">
-        <div class="container-fluid p-0">
-            <div class="row">
-               <div class="col-xl-5 col-lg-6">
-                    <div class="customer-img mb-120">
-                        <img src="{% static 'assets/img/customer/hml1.jpg' %}" class="customar-img1" alt="">
-                        <img src="{% static 'assets/img/customer/hml2.png' %}" class="customar-img2" alt="">
-                        <div class="service-experience heartbeat">
-                            <h3>Our Years of Service<br>Experience</h3>
-                        </div>
+<!-- Make customer Start-->
+{% load static %}
+
+<style>
+    #hiden {
+        display: none;
+    }
+</style>
+<section class="make-customer-area customar-padding fix">
+    <div class="container-fluid p-0">
+        <div class="row">
+            <div class="col-xl-5 col-lg-6">
+                <div class="customer-img mb-120">
+                    <img src="{% static 'assets/img/customer/hml1.jpg' %}" class="customar-img1" alt="">
+                    <img src="{% static 'assets/img/customer/hml2.png' %}" class="customar-img2" alt="">
+                    <div class="service-experience heartbeat">
+                        <h3>Our Years of Service<br>Experience</h3>
                     </div>
-               </div>
-                <div class=" col-xl-4 col-lg-4">
-                    <div class="customer-caption">
-                        <span>About Hotel Margherita</span>
-                        <h2>Make the customer the hero of your story</h2>
-                        <div class="caption-details">
-                            <p class="pera-dtails">Lorem ipsum dolor sit amet, consectetur adipisic- ing elit, sed do eiusmod tempor inc. </p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. </p>
-                            <a href="#" class="btn more-btn1">Learn More <i class="ti-angle-right"></i> </a>
-                        </div>
+                </div>
+            </div>
+            <div class=" col-xl-4 col-lg-4">
+                <div class="customer-caption">
+                    <span>About Hotel Margherita</span>
+                    <h2>Make the customer the hero of your story</h2>
+                    <div class="caption-details">
+                        <p class="pera-details">Hotel Margherita is situated some few kilometers west of Kasese town,
+                            Western Uganda in the foothills of the Rwenzori Mountains otherwise known as the "Mountains
+                            of the Moon". Professional warm hospitality, excellent food and accommodation, service with
+                            a smile! is our strength. </p>
+                        <p class="pera-details" id="hiden">
+                            Many of our international visitors will of course be in an awe
+                            struck with the views of the Rwenzori whilst they prepare mentally for their own assault on
+                            the mountain. Our terrace is, of course, the ideal venue for a Rwenzori sun-downer before
+                            proceeding to our restaurant for a sumptuous meal. You won’t find a better meal in Kasese
+                            and environs than in our restaurant. Our hand picked chefs will prepare for you a gourmet
+                            meal served in our comfortable restaurant. You can also enjoy some quiet moments in the
+                            gardens. Hotel Margherita attends to her Guests with courtesy and warm hospitality that
+                            makes them feel part of the entire Rwenzori experience.
+                        </p>
+                        <p class="btn more-btn1 text-white" id="flip">View More <i class="ti-angle-right"></i> </p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Make customer End-->
+    </div>
+</section>
+<!-- Make customer End-->
+
+<script>
+    $("#flip").click(function () {
+        $("#hiden").slideToggle();
+    }); 
+</script>

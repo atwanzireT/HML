@@ -1,5 +1,6 @@
-from django.forms import ModelForm, TextInput
+from django.forms import ModelForm, TextInput, Select
 from .models import *
+from django import forms
 
 class CustomerForm(ModelForm):
     class Meta:
@@ -8,13 +9,28 @@ class CustomerForm(ModelForm):
 
 
 class BookingForm(ModelForm):
+    check_InDate = forms.DateField(widget=forms.DateInput(format=('%Y-%m-%d'),
+        attrs={'class': 'form-control', 
+               'placeholder': 'Select a date',
+               'type': 'date'
+              }))
+    check_OutDate = forms.DateField(widget=forms.DateInput(format=('%Y-%m-%d'),
+        attrs={'class': 'form-control', 
+               'placeholder': 'Select a date',
+               'type': 'date'
+              }))
+    email = forms.EmailField(widget=forms.EmailInput(
+        attrs={
+            'class': 'form-control',
+            'placeholder': 'Email',
+            'type':'email'
+        }), required=True)
     class Meta:
         model = Booking
-        fields = ['Check_InDate', 'Check_OutDate', 'No_of_Guests', 'room_booked']
+        fields = ['email', 'check_InDate', 'check_OutDate', 'no_of_Guests', 'room_booked']
         widgets = {
-            'Check_InDate': TextInput(attrs={'class': 'form-control', 'id':'datepicker1',  'placeholder':'10/12/2020'}),
-            'Check_OutDate': TextInput(attrs={'class': 'form-control', 'id':'datepicker1',  'placeholder':'10/12/2020'}),
-            'No_of_Guests': TextInput(attrs={'class': 'form-control', 'id':'datepicker1'}),
-            'room_booked': TextInput(attrs={'class': 'form-control'}),
+            'email':TextInput(attrs={'class': 'form-control',}),
+            'no_of_Guests': TextInput(attrs={'class': 'form-control',}),
+            'room_booked': Select(attrs={'class': 'form-select'}),
         }
         

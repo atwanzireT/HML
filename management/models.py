@@ -17,11 +17,9 @@ class Customer(models.Model):
 
 class Booking(models.Model):
     booking_id = models.UUIDField(default = uuid.uuid4, unique = True)
-    Check_InDate = models.DateField()
-    Check_OutDate = models.DateField()
-    No_of_Guests = models.IntegerField(default = 1)
+    email = models.EmailField(blank=True, null=True)
+    check_InDate = models.DateField()
+    check_OutDate = models.DateField()
+    no_of_Guests = models.IntegerField(default = 1)
     room_booked = models.ForeignKey(Room, on_delete = models.CASCADE)
     slug = models.SlugField(blank = True, null = True)
-
-    def __str__(self):
-        return self.booking_id
