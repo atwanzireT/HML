@@ -82,10 +82,14 @@ def blog_detail(request, id):
 
 def room_detail(request, id):
     room_obj = Room.objects.get(id = id)
+    blog = Update.objects.all().order_by('?')[:3]
     room_img = Room_Image.objects.filter(room = id)
+    rooms = Room.objects.all().order_by('?')[:3]
     dic  = {
+        'blog': blog,
         'room_obj':room_obj,
         'room_img':room_img,
+        'rooms' : rooms,
     }
     return render(request, 'room_details.html', dic)
 

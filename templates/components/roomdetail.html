@@ -40,25 +40,36 @@
             </div>
             <div class="col-lg-4">
                 <aside class="single_sidebar_widget popular_post_widget">
-                    <h3 class="widget_title">Activities</h3>
+                    <h5 class="widget_title fs-6">Activities</h5>
+
+                    {% for rs in blog %}
                     <div class="media post_item">
-                        <img class="rounded m-1" src="{% static 'assets/img/post/post_1.png' %}" alt="post">
+                        <img class="rounded m-1" style="width: 80px;" src="{{rs.image.url}}" alt="post">
                         <div class="media-body ms-2">
-                            <a href="single-blog.html">
-                                <h5>From life was you fish...</h5>
+                            <a href="/blog/{{rs.id}}/">
+                                <h5 class="text-sucess">{{rs.title}}</h5>
                             </a>
-                            <p>Visit Uganda</p>
+                            <h6 class="text-muted">Visit Uganda</h6>
                         </div>
                     </div>
+                    {% endfor %}
+
+                </aside>
+                <aside class="single_sidebar_widget popular_post_widget">
+                    <h5 class="widget_title fs-6 mt-5">Rooms You May Like !</h5>
+
+                    {% for rs in rooms %}
                     <div class="media post_item">
-                        <img class="rounded m-1" src="{% static 'assets/img/post/post_1.png' %}" alt="post">
+                        <img class="rounded m-1" style="width: 80px;" src="{{rs.image.url}}" alt="post">
                         <div class="media-body ms-2">
-                            <a href="single-blog.html">
-                                <h5>From life was you fish...</h5>
+                            <a href="/rooms/{{rs.id}}/">
+                                <h5 class="text-sucess">{{rs.title}}</h5>
                             </a>
-                            <p>Visit Uganda</p>
+                            <h6 class="text-muted">Visit Hotel Margherita</h6>
                         </div>
                     </div>
+                    {% endfor %}
+
                 </aside>
             </div>
         </div>

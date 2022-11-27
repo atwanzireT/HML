@@ -27,27 +27,29 @@
 
                         {% for rs in blog_rand %}
                         <div class="blog_item_img">
-                            <img class="card-img rounded-0" src="{{rs.image.url}}" alt="">
-                            <a href="#" class="blog_item_date">
-                                <h3>{{rs.created.day}}</h3>
-                                <p>
-                                    {% if rs.created %}
-                                    {% if rs.created.month == 1 %}Jan{% endif %}
-                                    {% if rs.created.month == 2 %}Feb{% endif %}
-                                    {% if rs.created.month == 3 %}Mar{% endif %}
-                                    {% if rs.created.month == 4 %}Apr{% endif %}
-                                    {% if rs.created.month == 5 %}May{% endif %}
-                                    {% if rs.created.month == 6 %}Jun{% endif %}
-                                    {% if rs.created.month == 7 %}Jul{% endif %}
-                                    {% if rs.created.month == 8 %}Aug{% endif %}
-                                    {% if rs.created.month == 9 %}Sep{% endif %}
-                                    {% if rs.created.month == 10 %}Oct{% endif %}
-                                    {% if rs.created.month == 11 %}Nov{% endif %}
-                                    {% if rs.created.month == 12 %}Dec{% endif %}
-                                    {% endif %}
-                                </p>
-                                <p>{{rs.created.year}}</p>
+                            <a class="d-inline-block" href="/blog/{{rs.id}}">
+                                <img class="card-img rounded-0" src="{{rs.image.url}}" alt="">
+                                <a href="#" class="blog_item_date">
+                                    <h3>{{rs.created.day}}</h3>
+                                    <p>
+                                        {% if rs.created %}
+                                        {% if rs.created.month == 1 %}Jan{% endif %}
+                                        {% if rs.created.month == 2 %}Feb{% endif %}
+                                        {% if rs.created.month == 3 %}Mar{% endif %}
+                                        {% if rs.created.month == 4 %}Apr{% endif %}
+                                        {% if rs.created.month == 5 %}May{% endif %}
+                                        {% if rs.created.month == 6 %}Jun{% endif %}
+                                        {% if rs.created.month == 7 %}Jul{% endif %}
+                                        {% if rs.created.month == 8 %}Aug{% endif %}
+                                        {% if rs.created.month == 9 %}Sep{% endif %}
+                                        {% if rs.created.month == 10 %}Oct{% endif %}
+                                        {% if rs.created.month == 11 %}Nov{% endif %}
+                                        {% if rs.created.month == 12 %}Dec{% endif %}
+                                        {% endif %}
+                                    </p>
+                                    <p>{{rs.created.year}}</p>
 
+                                </a>
                             </a>
                         </div>
                         <div class="blog_details">
@@ -62,46 +64,6 @@
                         {% endfor %}
 
                     </article>
-
-
-                    {% for rs in blog reversed %}
-                    <article class="blog_item">
-                        <div class="blog_item_img">
-                            <img class="card-img rounded-0" src="{{rs.image.url}}" alt="">
-                            <a href="/blog/{{rs.id}}" class="blog_item_date">
-                                <h3>{{rs.created.day}}</h3>
-                                <p>
-                                    {% if rs.created %}
-                                    {% if rs.created.month == 1 %}Jan{% endif %}
-                                    {% if rs.created.month == 2 %}Feb{% endif %}
-                                    {% if rs.created.month == 3 %}Mar{% endif %}
-                                    {% if rs.created.month == 4 %}Apr{% endif %}
-                                    {% if rs.created.month == 5 %}May{% endif %}
-                                    {% if rs.created.month == 6 %}Jun{% endif %}
-                                    {% if rs.created.month == 7 %}Jul{% endif %}
-                                    {% if rs.created.month == 8 %}Aug{% endif %}
-                                    {% if rs.created.month == 9 %}Sep{% endif %}
-                                    {% if rs.created.month == 10 %}Oct{% endif %}
-                                    {% if rs.created.month == 11 %}Nov{% endif %}
-                                    {% if rs.created.month == 12 %}Dec{% endif %}
-                                    {% endif %}
-                                </p>
-                                <p>{{rs.created.year}}</p>
-                            </a>
-                        </div>
-
-                        <div class="blog_details">
-                            <a class="d-inline-block" href="/blog/{{rs.id}}">
-                                <h2>{{rs.title}}</h2>
-                            </a>
-                            <p>{{rs.description |truncatechars_html:150|safe }}</p>
-                            <ul class="blog-info-link">
-                                <li><a href="#"><i class="fa fa-user"></i> {{rs.created}}</a></li>
-                            </ul>
-                        </div>
-                    </article>
-                    {% endfor %}
-
 
                     <nav class="blog-pagination justify-content-center d-flex">
                         <ul class="pagination">
