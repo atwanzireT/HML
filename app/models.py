@@ -14,9 +14,15 @@ class Service(models.Model):
 class Room(models.Model):
     title = models.CharField(max_length = 50)
     image = models.ImageField(upload_to = 'rooms')
-    description = RichTextField(blank = True)
-    price = models.FloatField()
+    description = RichTextField(blank = True, null = True)
+    halfboard_price = models.FloatField(default=0)
+    fullboard_price = models.FloatField(default=0)
     slug = models.SlugField(blank=True, null=True)
+
+    def price(self):
+        average_price = self.halfboard_price + self.fullboard_price
+        average_price = (average_price / 4)
+        return average_price
 
 
     def __str__(self):
@@ -80,3 +86,4 @@ class ContactMessage(models.Model):
 
     def __str__(self):
         return self.name
+
